@@ -1,91 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faqja e Kompanisë së Makinave</title>
+    <title>QR Code - Hyrje në Faqe</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            background-image: url('automaticsLogo.png'); 
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             background-color: #f4f4f4;
-        }
-
-        .button-container {
-            margin-top: 30vh;
             display: flex;
-            gap: 20px;
-        }
-
-        .social-button {
-            display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            gap: 10px;
-            width: 70px;
-            height: 70px;
-            font-size: 0;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .qr-section img {
+            width: 220px;
+            height: 220px;
+            margin-top: 20px;
+        }
+
+        .enter-button {
+            margin-top: 40px;
+            padding: 15px 30px;
+            background-color: #333;
             color: white;
+            font-size: 18px;
             border: none;
-            border-radius: 50%;
+            border-radius: 10px;
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: background-color 0.3s ease;
         }
 
-        .social-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-        }
-
-        .social-button:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .facebook {
-            background: #3b5998;
-        }
-
-        .instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        }
-
-        .tiktok {
-            background: linear-gradient(135deg, #69C9D0, #EE1D52);
-        }
-
-        .social-icon {
-            width: 32px;
-            height: 32px;
+        .enter-button:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a class="social-button facebook" href="https://www.facebook.com/automatics.shpk" target="_blank">
-            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-        </a>
-        <a class="social-button instagram" href="https://www.instagram.com" target="_blank">
-            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-        </a>
-        <a class="social-button tiktok" href="https://www.tiktok.com" target="_blank">
-            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
-        </a>
-    </div>
     <div class="qr-section">
-    <p>Skeno QR Code për të hapur këtë faqe:</p>
-    <img src="qr_code_faqja_ime.png" alt="QR Code" width="200">
-</div>
+        <h1>Skeno QR Code për të hyrë në faqen e kompanisë</h1>
+        <img src="qr_code_faqja_ime.png" alt="QR Code">
+        <br>
+        <a href="index2.html" class="enter-button">Hyr në faqe</a>
+    </div>
 </body>
 </html>
