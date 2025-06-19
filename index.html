@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
             margin: 0;
             padding: 0;
             height: 100vh;
-            background-image: url('logo-kompanise.jpg');
+            background-image: url('308805231_586181393206785_7690415177981928775_n.png'); /* Zëvendëso me emrin e logos tënde */
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -41,36 +40,7 @@
             cursor: pointer;
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-button::after {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.2);
-            top: -50%;
-            left: -50%;
-            transform: rotate(45deg);
-            transition: opacity 0.5s;
-            opacity: 0;
-        }
-
-        .social-button:hover::after {
-            opacity: 1;
-            animation: shine 1s forwards;
-        }
-
-        @keyframes shine {
-            0% {
-                transform: rotate(45deg) translate(-100%, -100%);
-            }
-            100% {
-                transform: rotate(45deg) translate(100%, 100%);
-            }
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .social-button:hover {
@@ -98,13 +68,12 @@
         .social-icon {
             width: 32px;
             height: 32px;
-            z-index: 1;
         }
     </style>
 </head>
 <body>
     <div class="button-container">
-        <a class="social-button facebook" href="https://www.facebook.com" target="_blank">
+        <a class="social-button facebook" href="https://www.facebook.com/automatics.shpk" target="_blank">
             <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
         </a>
         <a class="social-button instagram" href="https://www.instagram.com" target="_blank">
