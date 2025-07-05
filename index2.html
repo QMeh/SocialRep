@@ -19,18 +19,32 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+            .footer {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
 
-       .button-container {
+     .button-container {
             position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            padding: 10px 0;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
         }
 
         .social-button {
@@ -102,6 +116,9 @@
             background: linear-gradient(135deg, #69C9D0, #EE1D52);
         }
 
+        .social-button.location {
+            background-color: #4285F4; /* Ngjyra origjinale e Google Maps */
+        }
         .social-icon {
             width: 32px;
             height: 32px;
@@ -110,16 +127,21 @@
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a class="social-button facebook" href="https://www.facebook.com/automatics.shpk" target="_blank">
+    <div class="button-container ">
+        <a class="social-button facebook" href="https://www.facebook.com/prodesigngjilan" target="_blank">
             <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
         </a>
-        <a class="social-button instagram" href="https://www.instagram.com" target="_blank">
+        <a class="social-button instagram" href="https://www.instagram.com/accounts/login/?next=%2Fproartdesign.ks%2F&source=omni_redirect" target="_blank">
             <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
         </a>
-        <a class="social-button tiktok" href="https://www.tiktok.com" target="_blank">
+    <!--   <a class="social-button tiktok" href="https://www.tiktok.com" target="_blank">
             <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
         </a>
+        -->
+           <a class="social-button location" href="https://maps.google.com?q=Your+Location" target="_blank">
+                <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg" alt="Lokacioni">
+            </a>
+
     </div>
 </body>
 </html>
