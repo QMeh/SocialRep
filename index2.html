@@ -10,15 +10,14 @@
             margin: 0;
             padding: 0;
             height: 100vh;
-            background-image: url('automaticsLogo.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
+            background: url('ProdesignLogo.jpg') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
 
         .button-container {
@@ -44,6 +43,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+
         }
 
         .social-button::after {
