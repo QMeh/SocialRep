@@ -1,147 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatics-ks</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: url('ProdesignLogo.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-            .footer {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Art Design</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    body {
+      background: url('ProLogodesign.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-container {
       position: fixed;
-      bottom: 20px;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 10px 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 10px 0;
       z-index: 1000;
+      justify-content: center;
     }
 
-     .button-container {
-            position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
-    padding: 10px 0;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-        }
+    .social-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 60px;
+      height: 60px;
+      font-size: 0;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .social-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 70px;
-            height: 70px;
-            font-size: 0;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+    .social-button::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.2);
+      top: -50%;
+      left: -50%;
+      transform: rotate(45deg);
+      transition: opacity 0.5s;
+      opacity: 0;
+    }
 
-        }
+    .social-button:hover::after {
+      opacity: 1;
+      animation: shine 1s forwards;
+    }
 
-        .social-button::after {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.2);
-            top: -50%;
-            left: -50%;
-            transform: rotate(45deg);
-            transition: opacity 0.5s;
-            opacity: 0;
-        }
+    @keyframes shine {
+      0% {
+        transform: rotate(45deg) translate(-100%, -100%);
+      }
+      100% {
+        transform: rotate(45deg) translate(100%, 100%);
+      }
+    }
 
-        .social-button:hover::after {
-            opacity: 1;
-            animation: shine 1s forwards;
-        }
+    .social-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    }
 
-        @keyframes shine {
-            0% {
-                transform: rotate(45deg) translate(-100%, -100%);
-            }
-            100% {
-                transform: rotate(45deg) translate(100%, 100%);
-            }
-        }
+    .social-button:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-        .social-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-        }
+    .facebook {
+      background: #3b5998;
+    }
 
-        .social-button:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+    .instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
 
-        .facebook {
-            background: #3b5998;
-        }
+    .tiktok {
+      background: linear-gradient(135deg, #69C9D0, #EE1D52);
+    }
 
-        .instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        }
+    .social-button.location {
+      background-color: #4285F4;
+    }
 
-        .tiktok {
-            background: linear-gradient(135deg, #69C9D0, #EE1D52);
-        }
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      z-index: 1;
+    }
 
-        .social-button.location {
-            background-color: #4285F4; /* Ngjyra origjinale e Google Maps */
-        }
-        .social-icon {
-            width: 32px;
-            height: 32px;
-            z-index: 1;
-        }
-    </style>
+    .phone-number {
+      margin-top: 10px;
+      font-size: 16px;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    @media (max-width: 600px) {
+      .social-button {
+        width: 50px;
+        height: 50px;
+      }
+
+      .social-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .phone-number {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="button-container ">
-        <a class="social-button facebook" href="https://www.facebook.com/prodesigngjilan" target="_blank">
-            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-        </a>
-        <a class="social-button instagram" href="https://www.instagram.com/proartdesign.ks/?igsh=Y3N2bzk3cjVxYjFo" target="_blank">
-            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-        </a>
-    <!--   <a class="social-button tiktok" href="https://www.tiktok.com" target="_blank">
-            <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
-        </a>
-        -->
-           <a class="social-button location" href="https://www.google.com/maps/dir/42.4771584,21.4663168/42.4780193,21.4595389/@42.4782985,21.457778,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg" alt="Lokacioni">
-            </a>
-
-    </div>
+  <div class="button-container">
+    <a class="social-button facebook" href="https://www.facebook.com/automatics.shpk" target="_blank">
+      <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+    </a>
+    <a class="social-button instagram" href="https://www.instagram.com/accounts/onetap/?next=%2Fproartdesign.ks%2Fy" target="_blank">
+      <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a class="social-button location" href="https://maps.app.goo.gl/UGfVq4ZaZGeWYKcf7" target="_blank">
+      <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg" alt="Lokacioni">
+    </a>
+    <div class="phone-number">Tel: +383 44 537 248</div>
+  </div>
 </body>
 </html>
