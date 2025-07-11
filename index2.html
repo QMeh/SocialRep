@@ -5,43 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pro Art Design</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      text-align: center;
     }
 
     body {
       background: url('ProLogodesign.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-size: cover; /* Default */
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
     }
 
+    /* Në ekran të madh (laptop e desktop) ruaj pamjen e plotë të fotos */
+    @media (min-width: 1024px) {
+      body {
+        background-size: contain; /* e ruan tërë imazhin pa prerje */
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: black; /* për të mos pasur zbrazëtirë të bardhë */
+      }
+    }
+
     .button-container {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      padding: 10px 0;
-      z-index: 1000;
       justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 10px 60px;
+      z-index: 1000;
     }
 
     .social-button {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       font-size: 0;
       color: white;
       border: none;
@@ -54,6 +64,10 @@
       overflow: hidden;
     }
 
+    .social-button:hover {
+      transform: scale(1.1);
+    }
+
     .social-button::after {
       content: "";
       position: absolute;
@@ -63,8 +77,8 @@
       top: -50%;
       left: -50%;
       transform: rotate(45deg);
-      transition: opacity 0.5s;
       opacity: 0;
+      transition: opacity 0.5s;
     }
 
     .social-button:hover::after {
@@ -81,29 +95,15 @@
       }
     }
 
-    .social-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-    }
-
-    .social-button:active {
-      transform: scale(0.98);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
     .facebook {
       background: #3b5998;
     }
 
     .instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     }
 
-    .tiktok {
-      background: linear-gradient(135deg, #69C9D0, #EE1D52);
-    }
-
-    .social-button.location {
+    .location {
       background-color: #4285F4;
     }
 
@@ -114,13 +114,31 @@
     }
 
     .phone-number {
+      width: 100%;
+      text-align: center;
       margin-top: 10px;
-      font-size: 16px;
       color: white;
+      font-size: 18px;
       text-shadow: 1px 1px 2px black;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .social-button {
+        width: 60px;
+        height: 60px;
+      }
+
+      .social-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .phone-number {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
       .social-button {
         width: 50px;
         height: 50px;
