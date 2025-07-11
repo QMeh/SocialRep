@@ -160,9 +160,15 @@
     <a class="social-button facebook" href="https://www.facebook.com/profile.php?id=100090474948492" target="_blank">
       <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
     </a>
-    <a class="social-button instagram" href="https://www.instagram.com/accounts/onetap/?next=%2Fproartdesign.ks%2Fy" target="_blank">
+    <!-- <a class="social-button instagram" href="https://www.instagram.com/accounts/onetap/?next=%2Fproartdesign.ks%2Fy" target="_blank"> -->
+    <!-- <a class="social-button instagram" href="instagram://user?username=proartdesign.ks" target="_blank">
       <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-    </a>
+    </a> -->
+
+<a class="social-button instagram" href="#" onclick="openInstagram()">
+  <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+</a>
+
     <a class="social-button location" href="https://maps.app.goo.gl/UGfVq4ZaZGeWYKcf7" target="_blank">
       <img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg" alt="Lokacioni">
     </a>
@@ -170,3 +176,26 @@
     <div>Tel: +383 44(48) 537 248</div>
 </body>
 </html>
+
+
+<script>
+  function openInstagram() {
+    const username = "proartdesign.ks";
+
+    // Kontrollo nëse është pajisje mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Hap aplikacionin në telefon
+      window.location.href = "instagram://user?username=" + username;
+
+      // Si backup nëse aplikacioni nuk hapet pas 2 sekondash, hap versionin web
+      setTimeout(() => {
+        window.location.href = "https://www.instagram.com/" + username;
+      }, 2000);
+    } else {
+      // Në desktop hapet versioni web
+      window.open("https://www.instagram.com/" + username, "_blank");
+    }
+  }
+</script>
